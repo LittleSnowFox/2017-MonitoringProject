@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 from itsdangerous import URLSafeTimedSerializer
-from server import app
+from run import app
 
 
 def generate_confirmation_token(email):
