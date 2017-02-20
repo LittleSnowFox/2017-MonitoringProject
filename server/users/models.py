@@ -13,7 +13,7 @@ Contains table's models of the user part.
 
 class User(db.Model):
     __tablename__ = 'user'
-    userid = Column(Integer(), unique=True, primary_key=True)
+    user_id = Column(Integer(), unique=True, primary_key=True)
     username = Column(String(100), unique=True)
     email = Column(String(255), unique=True)
     password = Column(String(100), unique=False)
@@ -22,9 +22,8 @@ class User(db.Model):
     is_authenticated = Column(Boolean(), nullable=False, default=False)
     is_anonymous = Column(Boolean(), nullable=False, default=True)
 
-    def __init__(self, userid=None, username=None, email=None, password=None, is_active=None, confirmed_on=None,
+    def __init__(self, username=None, email=None, password=None, is_active=None, confirmed_on=None,
                  is_authenticated=None, is_anonymous=None):
-        self.userid = userid
         self.username = username
         self.email = email
         self.set_password(password)
@@ -54,14 +53,14 @@ class User(db.Model):
 
     def get_id(self):
         """Method which, given a User instance, returns the unique ID for that object."""
-        return self.userid
+        return self.user_id
 
     @staticmethod
-    def load_user(userid):
+    def load_user(user_id):
         """Given *user_id*, return the associated User object.
         :param unicode userid: user_id (username) user to retrieve
         """
-        return User.query.filter(User.userid == userid).one()
+        return User.query.filter(User.user_id == user_id).one()
 
     def __repr__(self):
         return '<user %r>' % self.username
