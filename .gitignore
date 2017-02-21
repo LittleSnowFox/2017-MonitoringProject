@@ -1,8 +1,10 @@
+*.pyc
+.idea
+
 codeerrors.txt
 salt.txt
 secret_key.txt
 test.cookie
 help.txt
 server/config.py
-.idea
-*.pyc
+
