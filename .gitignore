@@ -7,4 +7,6 @@ secret_key.txt
 test.cookie
 help.txt
 server/config.py
-
+commands.txt
+client/js/indexsave.js
+client/indexsave.html

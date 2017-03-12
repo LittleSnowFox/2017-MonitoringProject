@@ -1,4 +1,8 @@
-README
+UP Status
+__________
 
-This project is in development and aims to create a web site to monitor
-the web sites uptime.
+
+A web site uptime monitoring application using Flask, SQLAlchemy,
+AngularJS.
+
+THE PROJECT IS CURRENTLY UNDER DEVELOPMENT.

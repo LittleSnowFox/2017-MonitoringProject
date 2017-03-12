@@ -58,7 +58,7 @@ class User(db.Model):
     @staticmethod
     def load_user(user_id):
         """Given *user_id*, return the associated User object.
-        :param unicode userid: user_id (username) user to retrieve
+        :param unicode user_id: user_id (username) user to retrieve
         """
         return User.query.filter(User.user_id == user_id).one()
 

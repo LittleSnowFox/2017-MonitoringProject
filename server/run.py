@@ -44,11 +44,15 @@ app.config["SECURITY_PASSWORD_SALT"] = generate_secretkey("salt.txt")
 if __name__ == "__main__":
     from server.users.models import User
     from server.users.views import user_views
+    from server.monitoring.models import WebSite
+    from server.monitoring.models import Notification
+    from server.monitoring.views import monitoring_views
 
     #################################
     # Register blueprints
     #################################
     app.register_blueprint(user_views)
+    app.register_blueprint(monitoring_views)
 
 
     # User_loader callback to reload the user object from the user ID stored in the session. It should return None (not
@@ -57,6 +61,6 @@ if __name__ == "__main__":
     @login_manager.user_loader
     def load_user(userid):
         return User.load_user(userid)
+    from server.sentry.sentry import *
 
-
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)

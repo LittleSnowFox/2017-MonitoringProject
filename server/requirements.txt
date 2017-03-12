@@ -13,3 +13,7 @@ passlib
 flask-httpauth
 passlib
 flask-bcrypt
+requests
+Celery
+pyping
+redis

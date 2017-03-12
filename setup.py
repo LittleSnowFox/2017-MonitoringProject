@@ -5,7 +5,7 @@ from distutils.core import setup
 setup(
     name='Web Monitoring',
     version='',
-    packages=["server", "server.app", "server.users", "server.monitoring"],
+    packages=["server", "server.app", "server.users", "server.monitoring", "server.sentry"],
     url='',
     license='',
     author='Berengere Bouillon',

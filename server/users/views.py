@@ -68,7 +68,7 @@ def confirm_email(token):
 
 @user_views.route('/login', methods=['POST'])
 def login():
-    user = User.get_user(request.json.get('username'))
+    user = User.get_user(request.json.get('username'))  # FIXME: Handle case where username is missing
     password = request.json.get('password')
     if not user or password != user.password:
         return jsonify({'status': 5}), 400  # invalid username or password

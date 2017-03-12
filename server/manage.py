@@ -27,6 +27,7 @@ def initdb():
     """
     from server.run import db
     import server.users.models
+    import server.monitoring.models
     db.create_all()
     click.echo('Initialized the database')
 
@@ -38,6 +39,8 @@ def dropdb():
     """
     from server.run import db
     import server.users.models
+    import server.monitoring.models
+    db.reflect()
     db.drop_all()
     click.echo('Dropped the database')
 
